@@ -23,6 +23,8 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 768px) {
