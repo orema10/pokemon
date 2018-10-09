@@ -1,6 +1,6 @@
 <template>
   <section class="pokemon-page">
-    <div v-for="(pokemonName, i) in page" :key="i">
+    <div class="single-pokemon" v-for="(pokemonName, i) in page" :key="i">
         <pokemon-preview :pokemonName="pokemonName"></pokemon-preview>
     </div>
   </section>
@@ -19,5 +19,17 @@ export default {
 </script>
 
 <style scoped>
+.pokemon-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .pokemon-page {
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+}
 </style>
 

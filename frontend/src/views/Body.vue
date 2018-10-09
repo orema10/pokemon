@@ -13,10 +13,6 @@ export default {
 };
 </script>
 
-<style scoped>
-body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
+<style>
+  @import url('../assets/css/style.css');
 </style>

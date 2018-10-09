@@ -86,11 +86,11 @@ export default {
 
 <style scoped>
 .pokemon-list {
-  background-color: black;
+  /* background-color: black;
   padding-top: 6px;
-  height: 100%;
+  height: 100%; */
 }
 .page-num {
-  color:white;
+  color: white;
 }
 </style>

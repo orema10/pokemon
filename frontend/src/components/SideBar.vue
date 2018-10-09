@@ -16,6 +16,7 @@ export default {
     .side-bar {
         display: flex;
         justify-content: space-around;
+        height: 3vh;
     }
 </style>
 

@@ -1,6 +1,5 @@
 <template>
-    <section class="pokemon-preview" @mouseover="showButton" 
-    @mouseout="hideButton">
+    <section class="pokemon-preview">
         <div v-if="loading">
             <div class="sk-circle">
                 <div class="sk-circle1 sk-child"></div>
@@ -20,7 +19,7 @@
         <div v-else-if="pokemon.name">
           <img :src="pokemon.sprites.front_default" />
           <div>{{pokemon.name}}</div>
-          <button class="btn" v-show="hover"
+          <button class="btn"
           @click="addToTeam">add to team</button>
         </div>
     </section>
@@ -35,7 +34,6 @@ export default {
     return {
       pokemon: {},
       loading: true,
-      hover: false
     };
   },
   created() {
@@ -49,12 +47,6 @@ export default {
     });
   },
   methods: {
-    showButton: function() {
-      this.hover = true;
-    },
-    hideButton: function() {
-      this.hover = false;
-    },
     addToTeam: function() {
       this.$store.commit({
         type: "addToTeam",
@@ -68,14 +60,14 @@ export default {
 
 <style scoped>
 .pokemon-preview {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
   border-radius: 5px;
   width: 90vw;
   min-height: 80px;
-  margin: 6px auto;
+  margin: 6px auto; */
 }
 .hidden {
   display: none;

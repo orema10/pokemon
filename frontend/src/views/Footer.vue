@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <img class="pokemon-logo" src="../assets/pokemon-logo.png" />
+        <img class="pokemon-logo" src="../assets/images/pokemon-logo.png" />
     </footer>
 </template>
 
