@@ -7,12 +7,9 @@
 <script>
 export default {
     created() {
-        console.log(1234);
-<<<<<<< HEAD
+        console.log(12834);
         console.log('sshhh');
-=======
-        
->>>>>>> origin/master
+        console.log('sshhh');
     }
 }
 </script>
