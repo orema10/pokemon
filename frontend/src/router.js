@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Team from './views/Team'
+import Team from '@/views/Team'
 import List from '@/components/PokemonList'
+import Battle from '@/views/Battle'
 
 Vue.use(Router)
 
@@ -16,6 +17,11 @@ export default new Router({
       path: '/team',
       name: 'Team',
       component: Team,
+    },
+    {
+      path: '/battle',
+      name: 'Battle',
+      component: Battle,
     },
   ]
 })
