@@ -19,4 +19,5 @@
 body {
     overflow-x: hidden;
     min-height: calc(100vh - 38vh);
+    width: 100vw;
 }
