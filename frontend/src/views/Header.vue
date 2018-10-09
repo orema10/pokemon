@@ -1,8 +1,9 @@
 <template>
 <div class="header">
     <header>
-        <img class="pokemon-logo" src="../assets/pokemon-logo.png" />
+        <img class="pokemon-logo" src="../assets/images/pokemon-logo.png" />
     </header>
+    <div class="header-fix"></div>
     <side-bar></side-bar>
 </div>
 </template>
@@ -28,5 +29,13 @@ header {
 
 header img.pokemon-logo {
     height: 125px;
+}
+
+.header-fix {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 20vh;
+    z-index: 3;
 }
 </style>
