@@ -10,6 +10,10 @@ export default {
         console.log(12834);
         console.log('sshhh');
         console.log('sshhh');
+        console.log(1234);
+        console.log('sshhh');
+        console.log('bnlbla');
+        console.log('sdasdasdnlbla');
     }
 }
 </script>
