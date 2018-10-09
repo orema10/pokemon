@@ -1,11 +1,11 @@
 <template>
     <section class="battle">
-        <div class="opponent-side">
-            <battle-section :pokemon="opponent"></battle-section>
-        </div>
-
         <div class="player-side">
             <battle-section :pokemon="getFirstInParty" trainerPokemon="true"></battle-section>
+        </div>
+
+        <div class="opponent-side">
+            <battle-section :pokemon="opponent"></battle-section>
         </div>
     </section>
 </template>
@@ -35,6 +35,14 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  justify-content: space-around;
+}
+.opponent-side {
+  float: right;
+}
+.player-side {
+  display: flex;
+  align-items: flex-end;
 }
 </style>
 
