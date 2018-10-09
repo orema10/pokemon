@@ -19,8 +19,12 @@
         <div v-else-if="pokemon.name">
           <img :src="pokemon.sprites.front_default" />
           <div>{{pokemon.name}}</div>
+
           <button class="btn"
           @click="addToTeam">add to team</button>
+
+          <button class="btn"
+          @click="newBattle">Fight!</button>
         </div>
     </section>
 </template>
@@ -33,18 +37,18 @@ export default {
   data() {
     return {
       pokemon: {},
-      loading: true,
+      loading: true
     };
   },
   created() {
-    if (this.teamMember){
+    if (this.teamMember) {
       this.pokemon = this.teamMember;
       setTimeout(() => (this.loading = false), 1000);
-    }
-    else service.getPokemonData(this.pokemonName).then(pokemon => {
-      this.pokemon = pokemon;
-      setTimeout(() => (this.loading = false), 1000);
-    });
+    } else
+      service.getPokemonData(this.pokemonName).then(pokemon => {
+        this.pokemon = pokemon;
+        setTimeout(() => (this.loading = false), 1000);
+      });
   },
   methods: {
     addToTeam: function() {
@@ -52,7 +56,10 @@ export default {
         type: "addToTeam",
         pokemon: this.pokemon
       });
-      this.$router.push('/team')
+      this.$router.push("/team");
+    },
+    newBattle: function() {
+      this.$router.push({ name: "Battle", params: { opponent: this.pokemon } });
     }
   }
 };

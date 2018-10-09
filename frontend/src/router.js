@@ -22,6 +22,7 @@ export default new Router({
       path: '/battle',
       name: 'Battle',
       component: Battle,
+      props:true
     },
   ]
 })

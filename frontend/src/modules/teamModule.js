@@ -4,13 +4,13 @@ export default {
         team: []
     },
     getters: {
-        team: state => state.team
+        team: state => state.team,
+        getFirstInParty: state => state.team[0]
     },
     mutations: {
         addToTeam(state, { pokemon }) {
             if (state.team.length < 6) state.team.push(pokemon)
-        }
-
+        },
     },
     actions: {
 
