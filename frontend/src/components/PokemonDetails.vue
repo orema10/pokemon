@@ -8,11 +8,8 @@
 export default {
     created() {
         console.log(1234);
-<<<<<<< HEAD
         console.log('sshhh');
-=======
-        
->>>>>>> origin/master
+        console.log('bnlbla');
     }
 }
 </script>
