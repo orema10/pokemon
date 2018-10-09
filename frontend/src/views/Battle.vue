@@ -14,7 +14,7 @@ export default {};
 
 <style scoped>
 .battle {
-    background-image: url('../assets/battle-background-grass.jpg');
+    background-image: url('../assets/images/battle-background-grass.jpg');
     width:100%;
     height: 100%;
 }
