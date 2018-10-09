@@ -16,7 +16,7 @@
     src: url('../fonts/Poppins/Poppins-Light.ttf');
 }
 
-body {
+main {
     overflow-x: hidden;
     min-height: calc(100vh - 38vh);
     width: 100vw;
