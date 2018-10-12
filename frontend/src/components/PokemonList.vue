@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       pages: [],
-      pokemonInPage: 5,
+      pokemonInPage: 6,
       currentPage: 1,
       inputValue: 1
     };
@@ -90,5 +90,9 @@ export default {
 }
 .page-num {
   color: white;
+}
+.nav-bar {
+  display: flex;
+  justify-content: space-around
 }
 </style>
