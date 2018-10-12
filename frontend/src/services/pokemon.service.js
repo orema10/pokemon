@@ -8,8 +8,6 @@ const BASE_LIST_URL = (process.env.NODE_ENV !== 'development')
     : '//localhost:3000/list';
 
 
-
-
 export default {
     createPokemonData,
     query,
@@ -17,8 +15,6 @@ export default {
     loadPokemonList,
     getPages,
     getPokemonData,
-
-
 }
 
 function getPokemonData(pokemonName) {

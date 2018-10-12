@@ -1,6 +1,6 @@
 <template>
     <section class="pokemon-team">
-      <div v-for="(teamMember, i) in getTeam" :key="i">
+      <div v-for="(teamMember, i) in team" :key="i">
         <pokemon-preview :teamMember="teamMember"></pokemon-preview>
       </div>
     </section>
@@ -13,10 +13,21 @@ import pokemonPreview from "@/components/PokemonPreview";
 export default {
   data() {
     return {
+      team: []
     };
+  },
+  mounted() {
+    this.$watch(
+      "getTeam",
+      getNewTeam => {
+        this.team = getNewTeam;
+      },
+      { immediate: true }
+    );
   },
   computed: {
     getTeam: function() {
+      this.team = this.$store.getters.team;
       return this.$store.getters.team;
     }
   },

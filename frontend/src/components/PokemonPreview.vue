@@ -10,7 +10,10 @@
           <button class="btn"
           @click="addToTeam">add to team</button>
 
-          <button class="btn"
+          <button v-if=teamMember class="btn"
+          @click="move">swap</button>
+
+          <button v-else class="btn"
           @click="newBattle">Fight!</button>
         </div>
     </section>
@@ -18,7 +21,7 @@
 
 <script>
 import service from "../services/pokemon.service";
-import loader from '../views/Loader';
+import loader from "../views/Loader";
 
 export default {
   props: ["pokemonName", "teamMember"],
@@ -27,6 +30,11 @@ export default {
       pokemon: {},
       loading: true
     };
+  },
+  watch: {
+    teamMember: function(newProp) {
+      this.pokemon = newProp;
+    }
   },
   created() {
     if (this.teamMember) {
@@ -48,6 +56,12 @@ export default {
     },
     newBattle: function() {
       this.$router.push({ name: "Battle", params: { opponent: this.pokemon } });
+    },
+    move: function() {
+      this.$store.commit({
+        type: "move",
+        pokemon: this.pokemon
+      });
     }
   },
   components: {
@@ -74,6 +88,7 @@ export default {
 
 .pokemon-items * {
   width: 50%;
+  margin-top: 13px;
 }
 
 .loader {
