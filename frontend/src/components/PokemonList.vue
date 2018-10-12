@@ -45,7 +45,6 @@ export default {
   created() {
     service.loadPokemonList().then(pokemonList => {
       this.pages = this.getPages(pokemonList);
-      console.log("this.pages.length");
     });
   },
   methods: {
