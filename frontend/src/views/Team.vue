@@ -28,8 +28,12 @@ export default {
 
 <style scoped>
 .pokemon-team {
-  background-color: black;
+  margin: 50px auto;
   padding-top: 6px;
   height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  width: 90%;
 }
 </style>
