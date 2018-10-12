@@ -7,13 +7,13 @@
           <img :src="pokemon.sprites.front_default" />
           <div>{{pokemon.name}}</div>
 
-          <button class="btn"
+          <button v-if="!teamMember" class="btn"
           @click="addToTeam">add to team</button>
 
-          <button v-if=teamMember class="btn"
+          <button v-if="teamMember && notFirst" class="btn"
           @click="move">swap</button>
 
-          <button v-else class="btn"
+          <button v-else-if="!teamMember" class="btn"
           @click="newBattle">Fight!</button>
         </div>
     </section>
@@ -24,7 +24,7 @@ import service from "../services/pokemon.service";
 import loader from "../views/Loader";
 
 export default {
-  props: ["pokemonName", "teamMember"],
+  props: ["pokemonName", "teamMember", "notFirst"],
   data() {
     return {
       pokemon: {},
@@ -58,10 +58,7 @@ export default {
       this.$router.push({ name: "Battle", params: { opponent: this.pokemon } });
     },
     move: function() {
-      this.$store.commit({
-        type: "move",
-        pokemon: this.pokemon
-      });
+      this.$store.commit({ type: "move", pokemon: this.pokemon });
     }
   },
   components: {

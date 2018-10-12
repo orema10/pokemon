@@ -1,7 +1,7 @@
 <template>
     <section class="pokemon-team">
       <div v-for="(teamMember, i) in team" :key="i">
-        <pokemon-preview :teamMember="teamMember"></pokemon-preview>
+        <pokemon-preview :teamMember="teamMember" :notFirst="i===0? false: true"></pokemon-preview>
       </div>
     </section>
 </template>
