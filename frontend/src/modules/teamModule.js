@@ -3,7 +3,7 @@ import Vue from 'vue'
 
 export default {
     state: {
-        team:[]
+        team:[],
     },
     getters: {
         team: state => state.team,

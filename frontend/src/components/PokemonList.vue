@@ -2,7 +2,9 @@
     <section class="pokemon-list">
 
       <div v-for="(page, i) in pages" :key="i">
-        <pokemon-page v-if="currentPage === i+1" :page="page" :pageNum=i></pokemon-page>
+        <keep-alive>
+          <pokemon-page v-if="currentPage === i+1" :page="page" :pageNum=i></pokemon-page>
+        </keep-alive>
       </div>
 
       <div class="nav-bar">
@@ -34,6 +36,7 @@ import service from "../services/pokemon.service";
 import pokemonPage from "./PokemonPage";
 
 export default {
+  name: 'PokemonList',
   data() {
     return {
       pages: [],
@@ -46,6 +49,7 @@ export default {
     service.loadPokemonList().then(pokemonList => {
       this.pages = this.getPages(pokemonList);
     });
+    this.currentPage = this.$store.getters.currentPage;
   },
   methods: {
     getPages: function(pokemonList) {
@@ -70,6 +74,11 @@ export default {
             break;
         }
       }
+      this.$store.commit({
+        type: "updatePage",
+        page: this.currentPage
+      });
+      this.$store.c;
     }
   },
   computed: {
@@ -92,6 +101,6 @@ export default {
 }
 .nav-bar {
   display: flex;
-  justify-content: space-around
+  justify-content: space-around;
 }
 </style>
