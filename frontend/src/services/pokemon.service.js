@@ -7,6 +7,10 @@ const BASE_LIST_URL = (process.env.NODE_ENV !== 'development')
     ? '/list'
     : '//localhost:3000/list';
 
+const TEST_URL = (process.env.NODE_ENV !== 'development')
+    ? '/test'
+    : '//localhost:3000/test';
+
 
 export default {
     createPokemonData,
@@ -15,6 +19,7 @@ export default {
     loadPokemonList,
     getPages,
     getPokemonData,
+    test
 }
 
 function getPokemonData(pokemonName) {
@@ -24,6 +29,10 @@ function getPokemonData(pokemonName) {
 
 function createPokemonData() {
     axios.post(`${BASE_URL}`)
+}
+
+function test() {
+    axios.post(`${TEST_URL}`)
 }
 
 function getPages(pokemonList, pokemonInPage) {

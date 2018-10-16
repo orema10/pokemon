@@ -7,6 +7,11 @@ module.exports = (app) => {
         res.json(pokemonService.getByName(pokemonName))
     });
 
+    app.post('/test', (req, res) => {
+        pokemonService.test()
+        res.json('working')
+    })
+
     app.post('/getNewJson', (req, res) => {
         return 8;
         // pokemonService.query()

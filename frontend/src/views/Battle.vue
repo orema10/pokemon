@@ -1,5 +1,6 @@
 <template>
     <section class="battle">
+      <button @click="catchPokemon">Catch</button>
       <battle-section :pokemon="getFirstInParty" playerSide="true"></battle-section>
       <battle-section :pokemon="opponent"></battle-section>
     </section>
@@ -10,6 +11,15 @@ import battleSection from "@/components/BattleSection";
 
 export default {
   props: ["opponent"],
+  methods: {
+    catchPokemon: function() {
+      this.$store.commit({
+        type: "addToTeam",
+        pokemon: this.opponent
+      });
+      this.$router.push("/team");
+    }
+  },
   computed: {
     getFirstInParty: function() {
       return this.$store.getters.getFirstInParty;

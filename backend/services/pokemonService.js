@@ -1,12 +1,26 @@
 var axios = require('axios')
 var fs = require('fs');
-var jf = require('jsonfile')
-var path = require('path');
+const mongoService = require('./mongoService');
+const ObjectId = require('mongodb').ObjectId;
 
 module.exports = {
     getList,
-    getByName
+    getByName,
+    test
 
+}
+
+function test() {
+    return mongoService.connect()
+    .then(db =>{
+        db.collection('pokemon').insertOne(
+            {
+                title: 'Hello MongoDB',
+                text: 'Hopefully this works!'
+            }
+        )
+    })
+    .catch(err => console.log('Mongodb error.', err));
 }
 
 function getList() {
