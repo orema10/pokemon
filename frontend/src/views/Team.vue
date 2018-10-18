@@ -1,5 +1,6 @@
 <template>
     <section class="pokemon-team">
+    <app-header></app-header>
       <div v-for="(teamMember, i) in team" :key="i">
         <pokemon-preview :teamMember="teamMember" :notFirst="i===0? false: true"></pokemon-preview>
       </div>
@@ -9,8 +10,10 @@
 <script>
 import service from "@/services/pokemon.service";
 import pokemonPreview from "@/components/PokemonPreview";
+import appHeader from "@/views/Header";
 
 export default {
+  name:'Team',
   data() {
     return {
       team: []
@@ -32,7 +35,8 @@ export default {
     }
   },
   components: {
-    pokemonPreview
+    pokemonPreview,
+    appHeader
   }
 };
 </script>

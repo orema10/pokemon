@@ -1,6 +1,7 @@
 <template>
     <section class="pokemon-list">
-      <button @click="test">test</button>
+      <app-header></app-header>
+
       <div v-for="(page, i) in pages" :key="i">
         <keep-alive>
           <pokemon-page v-if="currentPage === i+1" :page="page" :pageNum=i></pokemon-page>
@@ -34,6 +35,7 @@
 <script>
 import service from "../services/pokemon.service";
 import pokemonPage from "./PokemonPage";
+import appHeader from '../views/Header';
 
 export default {
   name: 'PokemonList',
@@ -52,9 +54,6 @@ export default {
     this.currentPage = this.$store.getters.currentPage;
   },
   methods: {
-    test:function() {
-      console.log(service.test())
-    },
     getPages: function(pokemonList) {
       return service.getPages(pokemonList, this.pokemonInPage);
     },
@@ -90,7 +89,8 @@ export default {
     }
   },
   components: {
-    pokemonPage
+    pokemonPage,
+    appHeader
   }
 };
 </script>
